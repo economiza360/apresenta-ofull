@@ -106,7 +106,16 @@ strong{font-weight:700;color:var(--text);}
 .stat .num.big{font-size:clamp(2.6rem,6vw,5rem);color:var(--accent);}
 .stat .label{font-size:.78rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.6rem);width:100%;max-width:1050px;}
-
+.stats-panel{width:100%;max-width:1150px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(255,255,255,0));overflow:hidden;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);width:100%;}
+.stats-row + .stats-row{border-top:1px solid var(--line);}
+.stat-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:clamp(1.6rem,3vw,2.4rem) 1rem;border-right:1px solid var(--line);position:relative;}
+.stat-cell:last-child{border-right:none;}
+.stat-cell .num{font-size:clamp(1.9rem,4vw,3.2rem);font-weight:900;color:var(--text);line-height:1;white-space:nowrap;}
+.stat-cell .num.secondary{color:var(--primary);}
+.stat-cell .label{font-size:.72rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;font-weight:600;text-align:center;}
+.stat-cell .divider-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);margin-bottom:.2rem;}
+@media (max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr);}.stat-cell{border-right:none;border-bottom:1px solid var(--line);}}
 .timeline{display:flex;flex-direction:column;gap:1.4rem;width:100%;max-width:1150px;}
 .timeline-row{display:flex;justify-content:space-between;gap:.6rem;}
 .tl-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:.5rem;text-align:center;position:relative;}
@@ -491,18 +500,20 @@ strong{font-weight:700;color:var(--text);}
         <span class="tag">Soluções financeiras para expansão</span>
       </div>
       <p class="lead" style="margin-top:1.3rem;">Proteger o que foi construído.<br><strong>Criar capacidade para construir mais.</strong></p>
-    </div>
-  </section>
-
-  <!-- ============ SLIDE 16 — PROVAS / NÚMEROS ============ -->
-  <section class="slide" id="slide-16">
-    <div class="slide-index">16 / 22</div>
-    <div class="slide-inner">
-      <span class="eyebrow accent">Resultados EZ360</span>
-      <h2 class="h2" style="margin-bottom:.6rem;">Números que sustentam o discurso.</h2>
-      <div class="stats-grid">
-        <div class="stat"><span class="num big">10</span><span class="label">Anos de experiência</span></div>
-        <div class="stat"><span class="num big">+R$170 MI</span><span class="label">Em VGV para clientes</span></div>
+<div class="stats-panel">
+          <div class="stats-row">
+            <div class="stat-cell"><span class="divider-dot"></span><span class="num">10</span><span class="label">Anos de experiência</span></div>
+            <div class="stat-cell"><span class="divider-dot"></span><span class="num">+R$170 MI</span><span class="label">Em VGV para clientes</span></div>
+            <div class="stat-cell"><span class="divider-dot"></span><span class="num">+R$20 MI</span><span class="label">Economizados</span></div>
+            <div class="stat-cell"><span class="divider-dot"></span><span class="num">+R$30 MI</span><span class="label">Recuperados</span></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-cell"><span class="num secondary">+2.000</span><span class="label">Diagnósticos</span></div>
+            <div class="stat-cell"><span class="num secondary">+1.000</span><span class="label">Processos seletivos</span></div>
+            <div class="stat-cell"><span class="num secondary">+3.000</span><span class="label">Contratações</span></div>
+            <div class="stat-cell"><span class="label" style="opacity:.4;">EZ360 · Plataforma de Gestão</span></div>
+          </div>
+        </div>
         <div class="stat"><span class="num big">+R$20 MI</span><span class="label">Economizados</span></div>
         <div class="stat"><span class="num big">+R$30 MI</span><span class="label">Recuperados</span></div>
       </div>
